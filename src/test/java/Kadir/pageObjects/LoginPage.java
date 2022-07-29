@@ -22,6 +22,9 @@ public class LoginPage extends BrowserUtils {
     private WebElement selectLanguage;
     @FindBy(id = "login-button")
     private WebElement loginButton;
+    @FindBy(xpath = "//div[contains(text(),'Invalid username or password')]")
+    private WebElement errorMessage;
+
 
 
 
@@ -42,5 +45,14 @@ public class LoginPage extends BrowserUtils {
         return driver.getTitle();
     }
 
+    public String setErrorMessage(){
+        return errorMessage.getText();
+    }
+    public void invalidUsername(){
+        userName.sendKeys("");
+    }
+    public void invalidPassword(){
+        password.sendKeys("");
+    }
 
 }

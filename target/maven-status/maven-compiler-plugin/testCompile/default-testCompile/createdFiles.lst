@@ -1,7 +1,0 @@
-Kadir/utils/BrowserUtils.class
-Kadir/utils/ConfigurationReader.class
-Kadir/utils/Driver.class
-Kadir/stepDefinitions/Login.class
-Kadir/runner/Runner.class
-Kadir/pageObjects/LoginPage.class
-Kadir/stepDefinitions/Hooks.class

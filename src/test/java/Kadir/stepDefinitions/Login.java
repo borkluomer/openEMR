@@ -2,6 +2,7 @@ package Kadir.stepDefinitions;
 
 import Kadir.pageObjects.LoginPage;
 import Kadir.utils.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -36,8 +37,18 @@ public class Login extends BrowserUtils {
     public void user_verifies_home_page_title_as(String title) {
         Assert.assertEquals(title,loginPage.getTitle());
     }
-    @Test
-    public void hello(){
-        System.out.println("Hello");
+    @When("user enters invalid Username")
+    public void user_enters_invalid_username() {
+        loginPage.invalidUsername();
+    }
+
+    @And("user gets error message as {string}")
+    public void userGetsErrorMessageAs(String errorMessage) {
+     Assert.assertEquals(errorMessage,loginPage.setErrorMessage());
+    }
+
+    @Then("user enters invalid Password")
+    public void userEntersInvalidPassword() {
+        loginPage.invalidPassword();
     }
 }
