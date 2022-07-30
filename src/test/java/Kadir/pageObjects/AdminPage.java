@@ -24,16 +24,35 @@ public class AdminPage extends BrowserUtils {
     private WebElement facilitiesText;
     @FindBy(name = "adm")
     private WebElement iframe;
+    @FindBy(xpath = "//a[contains(text(),'Add Facility')]")
+    private WebElement addFacilities;
+    @FindBy(name = "facility")
+    private WebElement name ;
+    @FindBy(css = "#ncolor")
+    private WebElement color ;
+
+
 
 
 
     public void setFacilities(){
         Actions actions=new Actions(driver);
         actions.click(admin).click(clinic).click(facilities).build().perform();
+
     }
     public String setFacilitiesText(){
         driver.switchTo().frame(iframe);
         return facilitiesText.getText();
+
+    }
+    public void setAddFacilities(){
+        addFacilities.click();
+    }
+    public void setName(String setname){
+        name.sendKeys(setname);
+    }
+    public void setColor(String setColor){
+        color.sendKeys(setColor);
     }
 
 
